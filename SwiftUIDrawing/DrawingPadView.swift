@@ -11,9 +11,8 @@ struct DrawingPadView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var cellStore: CellStore
 
-    @State private var drawing: Drawing?
+    @State var drawing: UIImage?
     @State private var pickedColor = ColorPicker.Color.black
-    @State private var sliderValue: Double = 0
 
     var body: some View {
         VStack {
@@ -32,19 +31,12 @@ struct DrawingPadView: View {
 
             Divider()
 
-            DrawingPad(savedDrawing: $drawing, pickedColor: pickedColor.color.opacity(1 - sliderValue))
+            DrawingPadRepresentation(drawingImage: $drawing, color: pickedColor.uiColor)
 
             Divider()
 
-            ColorSlider(sliderValue: $sliderValue,colors: [pickedColor.color, pickedColor.color.opacity(0)])
-                .frame(height: 60)
-                .padding(.horizontal)
             ColorPicker(pickedColor: $pickedColor)
                 .frame(height: 80)
-
-        }
-        .task {
-            drawing = cellStore.selectedCell?.drawing
         }
     }
 }
@@ -55,3 +47,4 @@ struct DrawingPadView_Previews: PreviewProvider {
             .environmentObject(CellStore())
     }
 }
+

@@ -17,6 +17,7 @@ struct ContentView: View {
         GeometryReader { geonetryProxy in
             BackgroundView(size: geonetryProxy.size)
         }
+        .ignoresSafeArea()
         .onChange(of: cellShape, perform: { newValue in
             guard let cell = cellStore.selectedCell else { return }
             cellStore.updateShape(cell: cell, shape: newValue)
@@ -25,7 +26,7 @@ struct ContentView: View {
             ShapeSelectionGrid(selectedCellShape: $cellShape)
         }
         .fullScreenCover(isPresented: $modalViews.showDrawingPad) {
-            DrawingPadView()
+            DrawingPadView(drawing: cellStore.selectedCell?.drawing)
         }
     }
 }

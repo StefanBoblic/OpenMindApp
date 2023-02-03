@@ -17,6 +17,11 @@
 		A4AF8E71298D3381005670F9 /* PathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E70298D3381005670F9 /* PathExtensions.swift */; };
 		A4AF8E73298D33BE005670F9 /* DrawingPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E72298D33BE005670F9 /* DrawingPad.swift */; };
 		A4AF8E75298D3DDD005670F9 /* DrawingPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E74298D3DDD005670F9 /* DrawingPadView.swift */; };
+		A4AF8E77298D6BFE005670F9 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E76298D6BFE005670F9 /* GridView.swift */; };
+		A4AF8E7A298D740E005670F9 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E79298D740E005670F9 /* CanvasView.swift */; };
+		A4AF8E7C298D7466005670F9 /* DrawingPadRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E7B298D7466005670F9 /* DrawingPadRepresentation.swift */; };
+		A4AF8E7E298D8027005670F9 /* DrawingColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E7D298D8027005670F9 /* DrawingColorView.swift */; };
+		A4AF8E80298D806B005670F9 /* DrawingPadExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AF8E7F298D806B005670F9 /* DrawingPadExtensions.swift */; };
 		A4C66C12298BEBD3002B7F7B /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C66C11298BEBD3002B7F7B /* CellModel.swift */; };
 		A4C66C14298BECE6002B7F7B /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C66C13298BECE6002B7F7B /* CellView.swift */; };
 		A4C66C16298C049F002B7F7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C66C15298C049F002B7F7B /* Extensions.swift */; };
@@ -37,6 +42,11 @@
 		A4AF8E70298D3381005670F9 /* PathExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathExtensions.swift; sourceTree = "<group>"; };
 		A4AF8E72298D33BE005670F9 /* DrawingPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPad.swift; sourceTree = "<group>"; };
 		A4AF8E74298D3DDD005670F9 /* DrawingPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadView.swift; sourceTree = "<group>"; };
+		A4AF8E76298D6BFE005670F9 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		A4AF8E79298D740E005670F9 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		A4AF8E7B298D7466005670F9 /* DrawingPadRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadRepresentation.swift; sourceTree = "<group>"; };
+		A4AF8E7D298D8027005670F9 /* DrawingColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingColorView.swift; sourceTree = "<group>"; };
+		A4AF8E7F298D806B005670F9 /* DrawingPadExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPadExtensions.swift; sourceTree = "<group>"; };
 		A4C66C11298BEBD3002B7F7B /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		A4C66C13298BECE6002B7F7B /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		A4C66C15298C049F002B7F7B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -77,16 +87,18 @@
 		A4A2C54D298B16F500D925E9 /* SwiftUIDrawing */ = {
 			isa = PBXGroup;
 			children = (
-				A4C66C1D298C0CCC002B7F7B /* Controls */,
 				A4A2C552298B16F600D925E9 /* Assets.xcassets */,
 				A4C66C19298C09BC002B7F7B /* BackgroundView.swift */,
+				A4AF8E78298D73FF005670F9 /* UIKit Drawing Pad */,
+				A4AF8E76298D6BFE005670F9 /* GridView.swift */,
 				A4C66C1B298C0C99002B7F7B /* Cell */,
 				A4A2C55C298B1A8D00D925E9 /* Colors.xcassets */,
 				A4A2C550298B16F500D925E9 /* ContentView.swift */,
+				A4C66C1D298C0CCC002B7F7B /* Controls */,
+				A4AF8E74298D3DDD005670F9 /* DrawingPadView.swift */,
 				A4C66C1C298C0CA5002B7F7B /* Extensions */,
 				A4A2C554298B16F600D925E9 /* Preview Content */,
 				A4A2C54E298B16F500D925E9 /* SwiftUIDrawingApp.swift */,
-				A4AF8E74298D3DDD005670F9 /* DrawingPadView.swift */,
 			);
 			path = SwiftUIDrawing;
 			sourceTree = "<group>";
@@ -97,6 +109,17 @@
 				A4A2C555298B16F600D925E9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A4AF8E78298D73FF005670F9 /* UIKit Drawing Pad */ = {
+			isa = PBXGroup;
+			children = (
+				A4AF8E79298D740E005670F9 /* CanvasView.swift */,
+				A4AF8E7B298D7466005670F9 /* DrawingPadRepresentation.swift */,
+				A4AF8E7D298D8027005670F9 /* DrawingColorView.swift */,
+				A4AF8E7F298D806B005670F9 /* DrawingPadExtensions.swift */,
+			);
+			path = "UIKit Drawing Pad";
 			sourceTree = "<group>";
 		};
 		A4C66C1B298C0C99002B7F7B /* Cell */ = {
@@ -207,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4AF8E73298D33BE005670F9 /* DrawingPad.swift in Sources */,
+				A4AF8E7E298D8027005670F9 /* DrawingColorView.swift in Sources */,
 				A4C66C16298C049F002B7F7B /* Extensions.swift in Sources */,
+				A4AF8E7A298D740E005670F9 /* CanvasView.swift in Sources */,
 				A4AF8E6C298D271B005670F9 /* FlyoutMenu.swift in Sources */,
 				A4C66C14298BECE6002B7F7B /* CellView.swift in Sources */,
 				A4A2C551298B16F500D925E9 /* ContentView.swift in Sources */,
@@ -216,8 +241,11 @@
 				A4A2C54F298B16F500D925E9 /* SwiftUIDrawingApp.swift in Sources */,
 				A4C66C21298C1FE0002B7F7B /* ColorPicker.swift in Sources */,
 				A4C66C18298C096B002B7F7B /* ShapeSelectionGrid.swift in Sources */,
+				A4AF8E77298D6BFE005670F9 /* GridView.swift in Sources */,
 				A4C66C1F298C0CD8002B7F7B /* ColorSlider.swift in Sources */,
+				A4AF8E7C298D7466005670F9 /* DrawingPadRepresentation.swift in Sources */,
 				A4AF8E71298D3381005670F9 /* PathExtensions.swift in Sources */,
+				A4AF8E80298D806B005670F9 /* DrawingPadExtensions.swift in Sources */,
 				A4C66C12298BEBD3002B7F7B /* CellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

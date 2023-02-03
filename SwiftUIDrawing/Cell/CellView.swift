@@ -40,8 +40,8 @@ struct CellView: View {
                     StrokeView(cell: cell, isSelected: isSelected, date: context.date)
                 }
                 if let drawing = cell.drawing {
-                    DrawingView(drawing: drawing, size: cell.size)
-                        .scaleEffect(0.8)
+                    Thumbnail(size: cell.size, drawing: Image(uiImage: drawing))
+                        .clipShape(cell.shape.shape)
                 } else {
                     TextField("Enter cell text", text: $text)
                         .padding()
@@ -84,6 +84,23 @@ extension CellView {
                 .onChange(of: date, perform: { _ in
                     dashPhase += 6
                 })
+        }
+    }
+}
+
+extension CellView {
+    struct Thumbnail: View {
+        let size: CGSize
+        let drawing: Image
+
+        var body: some View {
+            ZStack {
+                Color(uiColor: .systemBackground)
+                drawing
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: size.width, height: size.height)
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ struct BackgroundView: View {
       }
 
     ZStack {
-      Color.teal.opacity(0.7)
+     GridView()
         .ignoresSafeArea()
         .onTapGesture { cellStore.selectedCell = nil }
         .simultaneousGesture(doubleTap)

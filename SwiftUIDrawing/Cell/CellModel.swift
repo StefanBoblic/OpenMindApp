@@ -22,9 +22,21 @@ struct Cell: Identifiable, Equatable {
     var offset = CGSize.zero
     var shape = CellShape.allCases.randomElement()!
     var text = "New Idea!"
-    var drawing: Drawing?
+    var drawing: UIImage?
 
-    mutating func update(drawing: Drawing) {
+    var thumbnail: Image? {
+        guard let drawing = self.drawing else {
+            return nil
+        }
+
+        let thumbnailSize = CGSize(width: drawing.size.width, height: drawing.size.height)
+        let thumbnail = UIGraphicsImageRenderer(size: thumbnailSize).image { context in
+            drawing.draw(in: CGRect(origin: .zero, size: thumbnailSize))
+        }
+        return Image(uiImage: thumbnail)
+    }
+
+    mutating func update(drawing: UIImage) {
         self.drawing = drawing
     }
 
@@ -66,7 +78,7 @@ class CellStore: ObservableObject {
         cells[index].update(shape: shape )
     }
 
-    func updateDrawing(cell: Cell, drawing: Drawing) {
+    func updateDrawing(cell: Cell, drawing: UIImage) {
         let index = indexOf(cell: cell)
         cells[index].update(drawing: drawing)
     }
